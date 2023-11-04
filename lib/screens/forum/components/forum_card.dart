@@ -1,7 +1,7 @@
 import 'package:besty/models/Forum_group.dart';
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../constants/constants.dart';
 
 class ForumCard extends StatelessWidget {
   const ForumCard({
@@ -19,7 +19,7 @@ class ForumCard extends StatelessWidget {
       //onTap: press,
       child: Padding(
         padding: const EdgeInsets.symmetric(
-            horizontal: kDefaultPadding, vertical: kDefaultPadding * 0.75),
+            horizontal: kDefaultPadding * 0.75, vertical: kDefaultPadding * 0.5),
         child: Row(
           children: [
             Stack(
@@ -49,7 +49,7 @@ class ForumCard extends StatelessWidget {
             Expanded(
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                    const EdgeInsets.symmetric(horizontal: kDefaultPadding / 1.5),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -71,10 +71,31 @@ class ForumCard extends StatelessWidget {
                 ),
               ),
             ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding / 2 , vertical: kDefaultPadding / 3.5),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(kDefaultPadding),
+                gradient: LinearGradient(
+              begin: const Alignment(-0.9, -0.87),
+              end:  const Alignment(2, 0.87),
+              colors: [
+                kSecondaryColor.withOpacity(0.9), kPrimaryColor],
+            ),
+              ),
+              child: const Text(
+                "Rejoindre",
+                style: TextStyle(
+                  color: kContentColorDarkTheme,
+                  fontSize: 12,
+                ),
+              ),
+            )
+            /*
             Opacity(
               opacity: 0.64,
               child: Text(chat.time),
             ),
+            */
           ],
         ),
       ),

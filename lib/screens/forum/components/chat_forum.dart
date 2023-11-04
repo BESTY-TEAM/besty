@@ -1,11 +1,11 @@
-import 'package:besty/constants.dart';
+import 'package:besty/constants/constants.dart';
 import 'package:besty/models/Forum_group.dart';
 import 'package:besty/screens/forum/components/forum_card.dart';
 import 'package:flutter/material.dart';
 
 
-class Body extends StatelessWidget {
-  const Body({Key? key}) : super(key: key);
+class ChatForumScreen extends StatelessWidget {
+  const ChatForumScreen({Key? key}) : super(key: key);
   
   @override
   Widget build(BuildContext context) {
@@ -17,6 +17,9 @@ class Body extends StatelessWidget {
         ),
         Expanded(
           child: ListView.builder(
+            reverse: false,
+            primary: false,
+            //shrinkWrap: true,
             itemCount: chatsData.length,
             itemBuilder: (context, index) => ForumCard(
               chat: chatsData[index], press: () {  },

@@ -1,4 +1,4 @@
-import 'package:besty/constants.dart';
+import 'package:besty/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 

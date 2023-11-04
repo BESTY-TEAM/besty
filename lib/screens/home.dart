@@ -1,7 +1,7 @@
-import 'package:besty/constants.dart';
-import 'package:besty/screens/flow_track/flow_track.dart';
+import 'package:besty/constants/constants.dart';
 import 'package:besty/screens/forum/forum.dart';
 import 'package:besty/screens/pregnancy_track/pregant.dart';
+import 'package:besty/screens/profile/profile.dart';
 import 'package:flutter/material.dart';
 
 
@@ -10,22 +10,22 @@ class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  _ChatsScreenState createState() => _ChatsScreenState();
+  State<HomeScreen> createState() => _ChatsScreenState();
 }
 
 class _ChatsScreenState extends State<HomeScreen> {
-  int CurrentIndex = 0;
+  int currentIndex = 0;
 
   List pages = [
-      const FlowTrackScreen(),
+      const PregnantScreen(),
       const PregnantScreen(),
       const ForumScreen(),
-      const PregnantScreen(),
+      const ProfileScreen()
     ];
 
     void onTape(int index){
       setState(() {
-        CurrentIndex = index;
+        currentIndex = index;
       });
     }
 
@@ -33,17 +33,19 @@ class _ChatsScreenState extends State<HomeScreen> {
     Widget build(BuildContext context) {
       return Scaffold(
         bottomNavigationBar: buildBottomNavigationBar(),
-        body: pages[CurrentIndex],
+        body: pages[currentIndex],
       );
     }
     BottomNavigationBar buildBottomNavigationBar() {
       return BottomNavigationBar(
         elevation: 2,
         type: BottomNavigationBarType.fixed,
-        currentIndex: CurrentIndex,
+        currentIndex: currentIndex,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         onTap: (value) {
           setState(() {
-            CurrentIndex = value;
+            currentIndex = value;
           });
         },
         items: const [

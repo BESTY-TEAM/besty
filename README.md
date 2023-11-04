@@ -1,5 +1,5 @@
 
-# OALET
+# BESTY
 
 OALET est une application de portefeuille financier qui permet aux utilisateurs de gérer leurs finances personnelles de manière simple et sécurisée. L'application offre une variété de fonctionnalités, notamment :
 
