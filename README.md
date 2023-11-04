@@ -5,7 +5,7 @@ BESTY est une plateforme visant à améliorer les conditions des femmes en Afriq
 
 BESTY propose les services suivants :
 
-- <br>Éducation et sensibilisation</br>: la plateforme fournira des informations sur des sujets tels que la contraception, la santé maternelle et infantile, les violences sexuelles et basées sur le genre, les maladies sexuellement transmissibles, la sexualité et les droits sexuels et reproductifs.
+- <strong>Éducation et sensibilisation</strong>: la plateforme fournira des informations sur des sujets tels que la contraception, la santé maternelle et infantile, les violences sexuelles et basées sur le genre, les maladies sexuellement transmissibles, la sexualité et les droits sexuels et reproductifs.
 - Suivi du cycle menstruel et de la grossesse : la plateforme permettra aux femmes de suivre leur cycle menstruel et l'évolution de leur grossesse.
 - Téléassistance : la plateforme permettra aux femmes d'obtenir une assistance médicale et psychologique en ligne. Celle-ci sera réalisée par un médecin spécialiste ou un robot.
 - Forum de soutien communautaire : la plateforme offrira un forum où les femmes pourront partager leurs expériences et obtenir le soutien d'autres femmes.
