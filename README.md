@@ -1,7 +1,15 @@
 
 # BESTY
 
-OALET est une application de portefeuille financier qui permet aux utilisateurs de gérer leurs finances personnelles de manière simple et sécurisée. L'application offre une variété de fonctionnalités, notamment :
+BESTY est une plateforme visant à améliorer les conditions des femmes en Afrique grâce à l'intelligence artificielle. Cette plateforme numérique offre des informations et un accompagnement aux femmes sur des sujets variés liés à la santé, aux droits et à la sexualité.
+
+BESTY propose les services suivants :
+
+- <br>Éducation et sensibilisation</br>: la plateforme fournira des informations sur des sujets tels que la contraception, la santé maternelle et infantile, les violences sexuelles et basées sur le genre, les maladies sexuellement transmissibles, la sexualité et les droits sexuels et reproductifs.
+- Suivi du cycle menstruel et de la grossesse : la plateforme permettra aux femmes de suivre leur cycle menstruel et l'évolution de leur grossesse.
+- Téléassistance : la plateforme permettra aux femmes d'obtenir une assistance médicale et psychologique en ligne. Celle-ci sera réalisée par un médecin spécialiste ou un robot.
+- Forum de soutien communautaire : la plateforme offrira un forum où les femmes pourront partager leurs expériences et obtenir le soutien d'autres femmes.
+- Trouvez votre point de distribution de contraceptifs le plus proche.
 
 ## FEATURES
 
