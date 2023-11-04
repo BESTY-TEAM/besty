@@ -30,7 +30,7 @@ OALET est une application de portefeuille financier qui permet aux utilisateurs 
 
 <p align="left">
 <img width="163" alt="Flow Tracking" src="https://github.com/BESTY-TEAM/besy/blob/dev_tizi/besty_flow_track.jpg"/>
-<img width="170" alt="Education and Sensitize" src="https://github.com/BESTY-TEAM/besy/blob/dev_tizi/besty_education.jpg"/>
+<img width="200" alt="Education and Sensitize" src="https://github.com/BESTY-TEAM/besy/blob/dev_tizi/besty_education.jpg"/>
 <img width="170" alt="OALET" src="https://github.com/BESTY-TEAM/besy/blob/dev_tizi/besty_chat.jpg"/>
 <img width="170" alt="OALET" src="https://github.com/BESTY-TEAM/besy/blob/dev_tizi/besty_actus.jpg"/>
 <img width="170" alt="OALET" src="https://github.com/BESTY-TEAM/besy/blob/dev_tizi/besty_webinar.jpg"/>
