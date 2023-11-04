@@ -5,33 +5,41 @@ OALET est une application de portefeuille financier qui permet aux utilisateurs 
 
 ## FEATURES
 
-- La gestion des comptes bancaires et des cartes de crédit ✅
-- Le suivi des dépenses et des revenus ✅
-- La budgétisation
+- L'éducation et la sensibilisation de la femmme ✅
+- L'information et le soutien communautaires ✅
+- Le suivi de grocesse ✅
+- Le suivi de son cycle Menstruelle ✅
 
-## UI & THEME
+## UI Design<!-- &  THEME -->
 
-### Light Theme
+<!-- ### Light Theme -->
 
-<img width="861" alt="OALET" src="https://github.com/tizibienvenus/oalet/blob/main/OALETLIGHT.png">
+<img width="861" alt="OALET" src="https://github.com/BESTY-TEAM/besy/blob/dev_tizi/Frame 25.png">
 
 
-### Light Theme
+<!-- ### Light Theme -->
 
-<img width="861" alt="OALET" src="https://github.com/tizibienvenus/oalet/blob/main/OALETDARK.png">
+<img width="861" alt="OALET" src="https://github.com/BESTY-TEAM/besy/blob/dev_tizi/Frame 24.png">
 
 ## Screenshot On App Conding
 
 ### OnBoard Screen
 
-<img width="861" alt="OALET" src="https://github.com/tizibienvenus/oalet/blob/main/oalet2.png">
+
+### Quelques Captures d'écran de l'application
+
+<p align="left">
+<img width="163" alt="Flow Tracking" src="https://github.com/BESTY-TEAM/besy/blob/dev_tizi/besty_flow_track.jpg"/>
+<img width="163" alt="Education and Sensitize" src="https://github.com/BESTY-TEAM/besy/blob/dev_tizi/besty_education.jpg"/>
+<img width="163" alt="OALET" src="https://github.com/BESTY-TEAM/besy/blob/dev_tizi/besty_chat.jpg"/>
+<img width="163" alt="OALET" src="https://github.com/BESTY-TEAM/besy/blob/dev_tizi/besty_actus.jpg"/>
+<img width="163" alt="OALET" src="https://github.com/BESTY-TEAM/besy/blob/dev_tizi/besty_webinar.jpg"/>
+<img width="163" alt="OALET" src="https://github.com/BESTY-TEAM/besy/blob/dev_tizi/besty_prengant.jpg"/>
 
 
-### Home Screen
+<!-- ### Home Screen -->
 
-<img width="861" alt="OALET" src="https://github.com/tizibienvenus/oalet/blob/main/oalet1.png">
-
-### We allons nous focaliser sur:
+### Nous allons nous focaliser sur:
 
 - Un UI top, simple et intuitive.
 - Using State Management(Provider & Bloc).
