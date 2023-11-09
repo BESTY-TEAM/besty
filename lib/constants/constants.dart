@@ -23,3 +23,8 @@ const kTextColor = Color(0xFF4D5875);
 const kBackgoundColor = Color(0xFF091C40);
 const kSecondaryCallingColor = Color(0xFF606060);
 const kRedColor = Color(0xFFFF1E46);
+
+class Constants {
+  static const double defaultStrockWidth = 20;
+  static const double radius = 130;
+}

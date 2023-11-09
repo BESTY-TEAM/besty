@@ -15,6 +15,15 @@ class PregnantScreen extends StatefulWidget {
 class _PregnantScreenState extends State<PregnantScreen> {
   @override
   Widget build(BuildContext context) {
+
+    DateTime toDay = DateTime.now();
+
+    void _onDaySelected(DateTime day, DateTime focusDay){
+      setState(() {
+        toDay = day;
+      });
+    }
+
     return Scaffold(
         body: Padding(
           padding:const EdgeInsets.only(top: 50),
@@ -28,7 +37,10 @@ class _PregnantScreenState extends State<PregnantScreen> {
                     lastDay: DateTime.utc(2060, 12, 31),
                     rowHeight: 40,
                     pageJumpingEnabled: false,
-                    focusedDay: DateTime.now(),
+                    availableGestures: AvailableGestures.all,
+                    focusedDay: toDay,
+                    onDaySelected: _onDaySelected,
+                    selectedDayPredicate: (day) => isSameDay(day, toDay),
                     calendarFormat: CalendarFormat.week,
                     headerStyle: HeaderStyle(
                       formatButtonVisible: false,

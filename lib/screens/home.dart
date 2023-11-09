@@ -1,4 +1,5 @@
 import 'package:besty/constants/constants.dart';
+import 'package:besty/screens/flow_track/flow_track.dart';
 import 'package:besty/screens/forum/forum.dart';
 import 'package:besty/screens/pregnancy_track/pregant.dart';
 import 'package:besty/screens/profile/profile.dart';
@@ -18,7 +19,7 @@ class _ChatsScreenState extends State<HomeScreen> {
 
   List pages = [
       const PregnantScreen(),
-      const PregnantScreen(),
+      const FlowTrackScreen(title: 'Flow Track',),
       const ForumScreen(),
       const ProfileScreen()
     ];
@@ -40,6 +41,7 @@ class _ChatsScreenState extends State<HomeScreen> {
       return BottomNavigationBar(
         elevation: 2,
         type: BottomNavigationBarType.fixed,
+        fixedColor: kPrimaryColor,
         currentIndex: currentIndex,
         showSelectedLabels: false,
         showUnselectedLabels: false,
