@@ -16,11 +16,19 @@ class _PregnantScreenState extends State<PregnantScreen> {
   @override
   Widget build(BuildContext context) {
 
-    DateTime toDay = DateTime.now();
+    DateTime today = DateTime.now();
+    DateTime? _selectedDay;
 
-    void _onDaySelected(DateTime day, DateTime focusDay){
+   /* @override
+    void initState(){
+      super.initState();
+      _selectedDay = _focusedDay;
+    }*/
+
+    void _onDaySelected(DateTime day, DateTime focusedDay){
       setState(() {
-        toDay = day;
+        today = day;
+        //_selectedDay = focusDay;
       });
     }
 
@@ -32,35 +40,45 @@ class _PregnantScreenState extends State<PregnantScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  TableCalendar(
-                    firstDay: DateTime.utc(2022, 1, 1),
-                    lastDay: DateTime.utc(2060, 12, 31),
-                    rowHeight: 40,
-                    pageJumpingEnabled: false,
-                    availableGestures: AvailableGestures.all,
-                    focusedDay: toDay,
-                    onDaySelected: _onDaySelected,
-                    selectedDayPredicate: (day) => isSameDay(day, toDay),
-                    calendarFormat: CalendarFormat.week,
-                    headerStyle: HeaderStyle(
-                      formatButtonVisible: false,
-                      formatButtonShowsNext: false,
-                      headerMargin: const EdgeInsets.only(left: 20/2),
-                      titleTextStyle: const TextStyle(
-                        fontSize: 17.0,
-                        fontWeight: FontWeight.bold
-                        ),
-                        titleTextFormatter: (date, locale) => DateFormat.yMMMMd(locale).format(date),
-                        leftChevronVisible: false,
-                        rightChevronVisible: false,
+                  Text("Selected day = " + today.toString().split("")[0]),
+                  Container(
+                    child: TableCalendar(
+                      firstDay: DateTime.utc(2022, 1, 1),
+                      lastDay: DateTime.utc(2060, 12, 31),
+                      rowHeight: 40,
+                      pageJumpingEnabled: false,
+                      locale: "en_US",
+                      availableGestures: AvailableGestures.all,
+                      focusedDay: today,
+                      onDaySelected: _onDaySelected,
+                      selectedDayPredicate: (day) => isSameDay(day, today),
+                      calendarFormat: CalendarFormat.month,
+                      headerStyle: HeaderStyle(
+                        formatButtonVisible: false,
+                        formatButtonShowsNext: false,
+                        headerMargin: const EdgeInsets.only(left: 20/2),
+                        titleTextStyle: const TextStyle(
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.bold
+                          ),
+                          titleTextFormatter: (date, locale) => DateFormat.yMMMMd(locale).format(date),
+                          leftChevronVisible: false,
+                          rightChevronVisible: false,
+                      ),
+                      calendarStyle: const CalendarStyle(
+                        markerMargin: EdgeInsets.all(10),
+                        outsideDaysVisible: false
+                      ),
+                      //currentDay: DateTime.now(),
+                      //headerVisible: false,
+                      formatAnimationCurve: Curves.bounceInOut,
+                      onPageChanged: (focusedDay){
+                        _selectedDay = focusedDay;
+                      },
+
                     ),
-                    calendarStyle: const CalendarStyle(
-                      markerMargin: EdgeInsets.all(10)
-                    ),
-                    currentDay: DateTime.now(),
-                    //headerVisible: false,
-                    formatAnimationCurve: Curves.bounceInOut,
                   ),
+                  /*
                   Stack(
                     //fit: StackFit.expand,
                     children: [
@@ -99,6 +117,7 @@ class _PregnantScreenState extends State<PregnantScreen> {
                        ),
                     ],
                   ),
+                  */
                   const SizedBox(height: 20,),
                   const Text(
                     '6 mois, 2 semaines de ta grocesse',

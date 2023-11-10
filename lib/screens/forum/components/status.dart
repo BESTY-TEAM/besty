@@ -63,12 +63,10 @@ class ActusScreen extends StatelessWidget {
                       press: () {  }, news: NewsData[index],
                     ),
                   ),
-              
               )
-              
             ],
           ),            
-          )
+        )
     );
   }
 }

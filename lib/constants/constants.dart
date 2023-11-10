@@ -21,8 +21,13 @@ const kGrayColor = Color(0xFF8793B2);
 const kTitleTextColor = Color(0xFF30384D);
 const kTextColor = Color(0xFF4D5875);
 const kBackgoundColor = Color(0xFF091C40);
-const kSecondaryCallingColor = Color(0xFF606060);
+const kSecondaryCallingColor = Color(0xFF06060);
 const kRedColor = Color(0xFFFF1E46);
+
+/// API Key
+const String google_api_key = "AIzaSyComSRpYE55lHPBvRwdctmLUSaxD7zX6GY";
+//const String google_api_key = "AIzaSyBA_N4obTKm34xlQiOnb7tF14aE8ABcufU";
+//const String google_api_key = "AIzaSyCbIWmCy0PNQI7TD4xxOBq15S8aMNi0ry4";
 
 class Constants {
   static const double defaultStrockWidth = 20;

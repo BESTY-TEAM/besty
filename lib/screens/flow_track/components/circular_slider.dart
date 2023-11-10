@@ -21,6 +21,7 @@ class _CircularSliderState extends State<CircularSlider> {
   Offset currentDragOffset = Offset.zero;
   double startAngle = degToRad(90);
   double totalAngle = degToRad(360);
+  int duringCycle = 28;
 
   @override
   void initState() {
@@ -36,7 +37,7 @@ class _CircularSliderState extends State<CircularSlider> {
     Size canvasSize = Size(screenSize.width, screenSize.width /*- 10*/);
     Offset center = canvasSize.center(Offset.zero);
     final List dots = List.generate(
-      30,
+      duringCycle,
       (index) => generateSmallSlideDot(
         dotNumber: index,
         center: center,
@@ -46,7 +47,7 @@ class _CircularSliderState extends State<CircularSlider> {
       ),
     );
     final List innerDots = List.generate(
-      30,
+      duringCycle,
       (i) {
         var index = i;
         if (0 <= index && index < 6) {
@@ -109,7 +110,7 @@ class _CircularSliderState extends State<CircularSlider> {
             raduisSubstract: 25,
           );
         }
-        if (17 <= index && index < 30) {
+        if (17 <= index && index < duringCycle) {
           return generateSmallSlideDot(
             dotNumber: index,
             center: center,
@@ -132,7 +133,7 @@ class _CircularSliderState extends State<CircularSlider> {
     );
 
     final List innerDotsLevel2 = List.generate(
-      30,
+      duringCycle,
       (i) {
         var index = i;
         if ((0 < index && index < 6) ||
@@ -177,7 +178,7 @@ class _CircularSliderState extends State<CircularSlider> {
               "assets/lotties/animation.json",
               height: 150,
               width: 150,
-              reverse: false,
+              reverse: true,
               frameRate: FrameRate.max,
             ),
           ),
@@ -293,7 +294,9 @@ class CircleSliderPainter extends CustomPainter {
     return true;
   }
 }
-
+//********************************//
+// * Indicateur du jour courant *//
+//******************************//
 class DraggableSliderThumb extends StatelessWidget {
   final double currentAngle;
   const DraggableSliderThumb({super.key, required this.currentAngle});
@@ -330,6 +333,10 @@ class DraggableSliderThumb extends StatelessWidget {
   }
 }
 
+
+//********************************//
+// * Indicateur du jour courant *//
+//******************************//
 Widget generateSmallSlideDot({
   required int dotNumber,
   required Offset center,

@@ -3,6 +3,7 @@ import 'package:besty/screens/flow_track/flow_track.dart';
 import 'package:besty/screens/forum/forum.dart';
 import 'package:besty/screens/pregnancy_track/pregant.dart';
 import 'package:besty/screens/profile/profile.dart';
+import 'package:besty/screens/services/selected_services.dart';
 import 'package:flutter/material.dart';
 
 
@@ -21,7 +22,8 @@ class _ChatsScreenState extends State<HomeScreen> {
       const PregnantScreen(),
       const FlowTrackScreen(title: 'Flow Track',),
       const ForumScreen(),
-      const ProfileScreen()
+      const SelectedSeviceScreen()
+      //const ProfileScreen()
     ];
 
     void onTape(int index){

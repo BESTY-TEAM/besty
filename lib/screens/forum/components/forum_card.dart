@@ -64,7 +64,7 @@ class ForumCard extends StatelessWidget {
                       child: Text(
                         chat.lastMessage,
                         maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
+                        overflow: TextOverflow.clip,
                       ),
                     ),
                   ],

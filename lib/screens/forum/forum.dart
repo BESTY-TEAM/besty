@@ -4,7 +4,6 @@ import 'package:besty/screens/forum/components/chat_forum.dart';
 import 'package:besty/screens/forum/components/status.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
 import 'components/meet.dart';
 
 
@@ -14,23 +13,58 @@ class ForumScreen extends StatefulWidget {
   @override
   State<ForumScreen> createState() => _ChatsScreenState();
 }
-
-class _ChatsScreenState extends State<ForumScreen> with TickerProviderStateMixin {
+//TickerProviderStateMixin, with SingleTickerProviderStateMixin, RestorationMixin
+class _ChatsScreenState extends State<ForumScreen> with SingleTickerProviderStateMixin {
   late TabController tabController;//= TabController(length: 3, vsync: this, initialIndex: 0);
   int selectedValue = 0;
   int currentIndex = 0;
+  final RestorableInt tabIndex = RestorableInt(0);
 
-   @override
+  @override
+  String get restorationId => 'tab_scrollable_demo';
+
+  @override
+  void restoreState(RestorationBucket? oldBucket, bool initialRestore) {
+    //registerForRestoration(tabIndex, 'tab_index');
+    tabController!.index = tabIndex.value;
+  }
+
+  @override
+  void initState() {
+    tabController = TabController(
+      initialIndex: 0,
+      length: 12,
+      vsync: this,
+    );
+    tabController!.addListener(() {
+      // When the tab controller's value is updated, make sure to update the
+      // tab index value, which is state restorable.
+      setState(() {
+        tabIndex.value = tabController!.index;
+      });
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    tabController!.dispose();
+    tabIndex.dispose();
+    super.dispose();
+  }
+/*
+  @override
   void initState() {
     super.initState();
-    tabController = TabController(length: 3, initialIndex: 0, vsync: this);
+    tabController = TabController(length: 3, vsync: this, initialIndex: 0);//as PageController;
+    //tabController = TabController(length: 3, initialIndex: 0, vsync: this);
   }
 
   @override
   void dispose() {
     super.dispose();
     tabController.dispose();
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -38,20 +72,16 @@ class _ChatsScreenState extends State<ForumScreen> with TickerProviderStateMixin
       length: 3,
       child: Scaffold(
         appBar: buildAppBar(),
-        body: SizedBox(
-            //height: MediaQuery.of(context).size.height,
-            child: TabBarView(
-              physics: const NeverScrollableScrollPhysics(),
-              controller: tabController,
-              dragStartBehavior: DragStartBehavior.start,
-              children: const [
-                ChatForumScreen(),
-                ActusScreen(),
-                MeetScreen(),
-              ],
-            ),
-          )
-      ),
+        body:  TabBarView(
+          physics: const NeverScrollableScrollPhysics(), controller: tabController,
+          dragStartBehavior: DragStartBehavior.start,
+          children: const [
+            ChatForumScreen(),
+            ActusScreen(),
+            MeetScreen(),
+          ],
+        ),
+      )
     );
   }
 
@@ -96,7 +126,7 @@ class _ChatsScreenState extends State<ForumScreen> with TickerProviderStateMixin
         style: TextStyle(),
       ),
       bottom:  TabBar(
-        //isScrollable: true,
+        isScrollable: true,
         indicatorColor: kContentColorDarkTheme,
         indicatorSize: TabBarIndicatorSize.tab,
         padding: const EdgeInsets.only(left: kDefaultPadding, right: kDefaultPadding * 5),
@@ -104,7 +134,7 @@ class _ChatsScreenState extends State<ForumScreen> with TickerProviderStateMixin
               setState(() {
                 selectedValue = value;
               });
-              tabController.animateTo(value);
+              tabController.animateTo(value,);
             },
         tabs: const [
           Tab(
