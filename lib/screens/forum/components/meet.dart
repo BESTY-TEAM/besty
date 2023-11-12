@@ -58,7 +58,7 @@ class MeetScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.5),
                 child: Container(
                     padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.4),
-                  height: MediaQuery.of(context).size.height / 2.93,
+                  height: MediaQuery.of(context).size.height * 0.349,
                    // color: const Color(0xFFEEEEEE),
                     child: Expanded(
                       child: ListView.builder(
@@ -83,7 +83,7 @@ class MeetScreen extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: kDefaultPadding * 0.5,
-                    vertical: kDefaultPadding * 0.5
+                    //vertical: kDefaultPadding * 0.1
                 ),
                 child: Text(
                   'Recommanded Webinar',
@@ -98,7 +98,7 @@ class MeetScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.5),
                 child: Container(
                     padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.4),
-                    height: MediaQuery.of(context).size.height / 2.93,
+                    height: MediaQuery.of(context).size.height * 0.349,
                     // color: const Color(0xFFEEEEEE),
                     child: Expanded(
                       child: ListView.builder(

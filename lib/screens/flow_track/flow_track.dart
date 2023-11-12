@@ -22,7 +22,7 @@ class _FlowTrackScreenState extends State<FlowTrackScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      /*appBar: AppBar(
         backgroundColor: kContentColorDarkTheme,
         toolbarHeight: 100,
         title: TableCalendar(
@@ -51,7 +51,7 @@ class _FlowTrackScreenState extends State<FlowTrackScreen> {
                     //headerVisible: false,
                     formatAnimationCurve: Curves.bounceInOut,
                   ),
-      ),
+      ),*/
       body: Center(
         child: Padding(
           padding: const EdgeInsets.only(
@@ -59,6 +59,32 @@ class _FlowTrackScreenState extends State<FlowTrackScreen> {
           ),
           child: Column(
             children: <Widget>[
+              TableCalendar(
+                firstDay: DateTime.utc(2022, 1, 1),
+                lastDay: DateTime.utc(2060, 12, 31),
+                rowHeight: 40,
+                pageJumpingEnabled: false,
+                focusedDay: DateTime.now(),
+                calendarFormat: CalendarFormat.week,
+                headerStyle: HeaderStyle(
+                  formatButtonVisible: false,
+                  formatButtonShowsNext: false,
+                  headerMargin: const EdgeInsets.only(left: 20/2),
+                  titleTextStyle: const TextStyle(
+                      fontSize: 17.0,
+                      fontWeight: FontWeight.bold
+                  ),
+                  titleTextFormatter: (date, locale) => DateFormat.yMMMMd(locale).format(date),
+                  leftChevronVisible: false,
+                  rightChevronVisible: false,
+                ),
+                calendarStyle: const CalendarStyle(
+                    markerMargin: EdgeInsets.all(10)
+                ),
+                currentDay: DateTime.now(),
+                //headerVisible: false,
+                formatAnimationCurve: Curves.bounceInOut,
+              ),
               TextFormField(
                 keyboardType: TextInputType.number,
                 validator: (value) {
