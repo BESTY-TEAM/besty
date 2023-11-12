@@ -22,9 +22,10 @@ class MeetScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: kDefaultPadding * 0.5,
-                      vertical: kDefaultPadding * 0.5
+                  padding: EdgeInsets.only(
+                      left: kDefaultPadding * 0.5,
+                      right: kDefaultPadding * 0.5,
+                      top: kDefaultPadding * 0.5
                   ),
                   child: Text(
                     'Popular Webinar',
@@ -35,31 +36,55 @@ class MeetScreen extends StatelessWidget {
                     ),
                   ),
               ),
-              /*Expanded(
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  reverse: false,
-                  primary: false,
-                  //shrinkWrap: true,
-                  itemCount: StatusData.length,
-                  itemBuilder: (context, index) => MeetCard(
-                    meet: MeetsData[index], press: () {  },
-                    /*press: () => Navigator.push(
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.2),
+                child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.1),
+                  height: MediaQuery.of(context).size.height * 0.349,
+                   // color: const Color(0xFFEEEEEE),
+                    child: Expanded(
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        reverse: false,
+                        primary: false,
+                        shrinkWrap: true,
+                        //shrinkWrap: true,
+                        itemCount: MeetsData.length,
+                        itemBuilder: (context, index) => MeetCard(
+                          meet: MeetsData[index], press: () {  },
+                          /*press: () => Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => const MessagesScreen(),
                           ),
                         ),*/
+                        ),
+                      ),
+                    )
+                ),
+              ),
+
+              // Recommanded
+              const Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: kDefaultPadding * 0.5,
+                    //vertical: kDefaultPadding * 0.1
+                ),
+                child: Text(
+                  'Recommanded Webinar',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      color: kTitleTextColor
                   ),
                 ),
-              ),*/
-              //const SizedBox(width: kDefaultPadding * 0.5,),
+              ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.5),
+                padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.1),
                 child: Container(
                     padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.4),
-                  height: MediaQuery.of(context).size.height * 0.349,
-                   // color: const Color(0xFFEEEEEE),
+                    height: MediaQuery.of(context).size.height * 0.349,
+                    // color: const Color(0xFFEEEEEE),
                     child: Expanded(
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
@@ -80,13 +105,15 @@ class MeetScreen extends StatelessWidget {
                     )
                 ),
               ),
+
+              // Near you
               const Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: kDefaultPadding * 0.5,
-                    //vertical: kDefaultPadding * 0.1
+                  horizontal: kDefaultPadding * 0.5,
+                  //vertical: kDefaultPadding * 0.1
                 ),
                 child: Text(
-                  'Recommanded Webinar',
+                  'Near you Webinar',
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w500,
@@ -102,6 +129,7 @@ class MeetScreen extends StatelessWidget {
                     // color: const Color(0xFFEEEEEE),
                     child: Expanded(
                       child: ListView.builder(
+                        physics: const ScrollPhysics(),
                         scrollDirection: Axis.horizontal,
                         reverse: false,
                         primary: false,
