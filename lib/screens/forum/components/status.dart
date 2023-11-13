@@ -13,7 +13,7 @@ class ActusScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: const Color(0xFFF8F8F8).withOpacity(0.1),
+        backgroundColor: const Color(0xFFEEEEEE).withOpacity(0.35),
         body: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

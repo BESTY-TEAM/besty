@@ -20,9 +20,9 @@ class _PregnantScreenState extends State<PregnantScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
-          padding:const EdgeInsets.only(top: 50),
-            child: SingleChildScrollView(
+        body: SingleChildScrollView (
+            child: Padding(
+              padding:const EdgeInsets.only(top: 50),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -166,7 +166,8 @@ class _PregnantScreenState extends State<PregnantScreen> {
                   height: 0.05,
                   letterSpacing: -0.24,
                   ),
-                )
+                ),
+                  SizedBox(height: 800,)
                 ],
               ),
             ),

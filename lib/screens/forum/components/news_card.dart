@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:expandable/expandable.dart';
 import '../../../constants/constants.dart';
 
-/*
+
 class NewsCard extends StatefulWidget {
   NewsCard({
     Key? key,
@@ -20,10 +20,10 @@ class NewsCard extends StatefulWidget {
 }
 
 class _NewsCardState extends State<NewsCard> {
-  final GlobalKey<Fo>
-  News news = NewsData;
+
   bool isExpanded = false;
-  List news;*/
+  /*
+
 class NewsCard extends StatelessWidget {
   NewsCard({
     Key? key,
@@ -36,7 +36,7 @@ class NewsCard extends StatelessWidget {
   News news;
   VoidCallback press;
   bool isExpanded ;
-
+*/
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class NewsCard extends StatelessWidget {
         child: Card(
           shadowColor: Color(0x3600000F),
           //margin: const EdgeInsets.symmetric(vertical: kDefaultPadding ),
-          elevation: 5,
+          elevation: 0.2,
           child: Column(
             children: [
               Column(
@@ -56,7 +56,7 @@ class NewsCard extends StatelessWidget {
                     AspectRatio(
                       aspectRatio: 1.5,
                       child: Image.asset(
-                        news.image,
+                        widget.news.image,
                         fit: BoxFit.cover
                       ),
                     ),
@@ -88,7 +88,7 @@ class NewsCard extends StatelessWidget {
                                         width: kDefaultPadding * 0.25,
                                       ),
                                       Text(
-                                        "${news.views}M",
+                                        "${widget.news.views}M",
                                         style: const TextStyle(
                                           fontSize: 15,
                                           fontWeight: FontWeight.w700
@@ -109,7 +109,7 @@ class NewsCard extends StatelessWidget {
                                         width: kDefaultPadding * 0.25,
                                       ),
                                       Text(
-                                        "${news.views}M",
+                                        "${widget.news.views}M",
                                         style: const TextStyle(
                                           fontSize: 15,
                                           fontWeight: FontWeight.w700
@@ -133,7 +133,7 @@ class NewsCard extends StatelessWidget {
                               horizontal: kDefaultPadding * 0.5
                             ),
                             child: Text(
-                              news.title,
+                              widget.news.title,
                               style: Theme.of(context)
                               .textTheme
                               .headline6!
@@ -172,51 +172,61 @@ class NewsCard extends StatelessWidget {
               
               ExpandablePanel(
                 //header: Text("Hello"),
-                controller: ExpandableController( initialExpanded: isExpanded),
-                collapsed: Padding(
+              controller: ExpandableController( initialExpanded: isExpanded),
+              collapsed: Padding(
                   padding: const EdgeInsets.only(
                     top: kDefaultPadding * 0.15,
                     left: kDefaultPadding * 0.5
                   ),
+                child: InkWell(
+                  onTap: (){
+                    setState(() {
+                      isExpanded = !isExpanded;
+                    });
+                  },
                   child: Text(
-                  news.message,
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context)
-                  .textTheme
-                  .titleSmall!
-                  .copyWith(
-                  fontFamily: 'nunito',
-                  color: Colors.black.withOpacity(0.7),
-                  fontWeight: FontWeight.w500,
-                  //height: 0.10,
-                  letterSpacing: -0.24,
-                  ),
-                ),
-              ),
-              expanded: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: kDefaultPadding * 0.15,
-                    horizontal: kDefaultPadding * 0.5
-                  ),
-                  child: Text(
-                  news.message,
-                  //maxLines: 3,
-                  style: const TextStyle(
-                    fontFamily: 'Poppins',
+                      widget.news.message,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context)
+                    .textTheme
+                    .titleSmall!
+                    .copyWith(
+                    //fontFamily: 'nunito',
+                    color: Colors.black.withOpacity(0.7),
                     fontWeight: FontWeight.w500,
                     //height: 0.10,
                     letterSpacing: -0.24,
-                  )
-                  /*Theme.of(context)
-                  .textTheme
-                  subtitle2!
-                  copyWith(
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w500,
-                  //height: 0.10,
-                  letterSpacing: -0.24,
-                  ),*/
+                    ),
+                ),
+                  ),
+              ),
+              expanded: Padding(
+                padding: const EdgeInsets.only(
+                    top: kDefaultPadding * 0.15,
+                    left: kDefaultPadding * 0.5
+                ),
+                child: InkWell(
+                  onTap: (){
+                    setState(() {
+                      isExpanded = !isExpanded;
+                    });
+                  },
+                  child: Text(
+                    widget.news.message,
+                    maxLines: 80,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleSmall!
+                        .copyWith(
+                      //fontFamily: 'nunito',
+                      color: Colors.black.withOpacity(0.7),
+                      fontWeight: FontWeight.w500,
+                      //height: 0.10,
+                      letterSpacing: -0.24,
+                    ),
+                  ),
                 ),
               ),
               ),
@@ -232,8 +242,13 @@ class NewsCard extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: (){},
-                      child: const Text('Voir plus')
+                      onPressed: (){
+                        setState(() {
+                          isExpanded = !isExpanded;
+                        });
+                      },
+                      child:  Text(
+                          isExpanded ? 'Voir moins' : 'Voir plus')
                     ),
                   ]
                 ),

@@ -13,6 +13,7 @@ class CircularSliderController extends ChangeNotifier {
 
   changeDay(int day) {
     this.day = day - 1;
+    this.day = day - 1;
     currentAngle = degToRad(((day - 1) * 12) + 184);
     notifyListeners();
   }
@@ -20,5 +21,11 @@ class CircularSliderController extends ChangeNotifier {
   changeAngle(double angle) {
     currentAngle = angle;
     notifyListeners();
+  }
+  bool currentDragOffset(day) {
+    if (day == null) {
+      return false;
+    }
+    return day;
   }
 }
