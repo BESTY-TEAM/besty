@@ -2,9 +2,6 @@ import 'package:besty/models/meet.dart';
 import 'package:besty/screens/forum/components/meet_card.dart';
 import 'package:flutter/material.dart';
 import 'package:besty/constants/constants.dart';
-import 'package:besty/models/news.dart';
-import 'package:besty/models/status.dart';
-import 'package:besty/screens/forum/components/news_card.dart';
 
 
 
@@ -42,7 +39,6 @@ class MeetScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.1),
                   height: MediaQuery.of(context).size.height * 0.349,
                    // color: const Color(0xFFEEEEEE),
-                    child: Expanded(
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         reverse: false,
@@ -60,7 +56,6 @@ class MeetScreen extends StatelessWidget {
                         ),*/
                         ),
                       ),
-                    )
                 ),
               ),
 
@@ -85,8 +80,7 @@ class MeetScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.4),
                     height: MediaQuery.of(context).size.height * 0.349,
                     // color: const Color(0xFFEEEEEE),
-                    child: Expanded(
-                      child: ListView.builder(
+                    child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         reverse: false,
                         primary: false,
@@ -102,7 +96,6 @@ class MeetScreen extends StatelessWidget {
                         ),*/
                         ),
                       ),
-                    )
                 ),
               ),
 
@@ -127,8 +120,7 @@ class MeetScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.4),
                     height: MediaQuery.of(context).size.height * 0.349,
                     // color: const Color(0xFFEEEEEE),
-                    child: Expanded(
-                      child: ListView.builder(
+                    child: ListView.builder(
                         physics: const ScrollPhysics(),
                         scrollDirection: Axis.horizontal,
                         reverse: false,
@@ -145,7 +137,6 @@ class MeetScreen extends StatelessWidget {
                         ),*/
                         ),
                       ),
-                    )
                 ),
               ),
             ],

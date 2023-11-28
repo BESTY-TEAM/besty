@@ -30,7 +30,7 @@ List SymtomsData = [
   ),
   Symtom(
       symptomTitle: 'Menstrual Pain',
-      symptomImage: Assets.iconsMenstruation_pain,
+      symptomImage: Assets.iconsMenstruationPain,
       subSymptom: [
         SubSymtom(
           subTitle: 'Intensity',

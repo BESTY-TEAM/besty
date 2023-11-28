@@ -108,6 +108,7 @@ class NewsCard extends StatelessWidget {
                                       const SizedBox(
                                         width: kDefaultPadding * 0.25,
                                       ),
+                                      //BottomSheet(),
                                       Text(
                                         "${widget.news.views}M",
                                         style: const TextStyle(
@@ -137,13 +138,13 @@ class NewsCard extends StatelessWidget {
                               style: Theme.of(context)
                               .textTheme
                               .headline6!
-                              .copyWith(
+                              /*.copyWith(
                                 //fontFamily: 'Poppins',
                                 fontWeight: FontWeight.w500,
                                 color: Colors.black.withOpacity(0.8),
                                 //height: 0.10,
                                 //letterSpacing: -0.24,
-                              ),
+                              ),*/
                             ),
                           ),
                         ]
@@ -260,3 +261,4 @@ class NewsCard extends StatelessWidget {
     );
   }
 }
+//6

@@ -1,5 +1,5 @@
 import 'package:besty/constants/constants.dart';
-import 'package:besty/screens/services/components/Input_select_service.dart';
+import 'package:besty/screens/ticket_view.dart';
 import 'package:flutter/material.dart';
 
 class SelectedSeviceScreen extends StatefulWidget{
@@ -15,16 +15,42 @@ class _SelectedSeviceScreenState extends State<SelectedSeviceScreen> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 20),
-        child: Wrap(
+      body: ListView(
+        //padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 20),
+        children: [
+          SingleChildScrollView(
+            reverse: true,
+            scrollDirection: Axis.vertical,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(kDefaultPadding / 1.25),
+                    child: Text(
+                      'Today Travel',
+                      style: Styles.headLineStyle3.copyWith(
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                  ),
+                  TicketView(),
+                  TicketView(),
+                  TicketView(),
+                  TicketView(),
+                  TicketView(),
+                  TicketView(),
+                ],
+              ))
+        ],
+        /*
+        Wrap(
           alignment: WrapAlignment.start,
           runAlignment: WrapAlignment.start,
           //runSpacing: kDefaultPadding / 10,
           spacing: kDefaultPadding / 3,
           children: [
             const SizedBox(height: 100,),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             InputSeviceScreen(title: "Pregnancy", icon: Icons.pregnant_woman, isSelected: true),
             InputSeviceScreen(title: "News", icon: Icons.insert_drive_file_outlined, isSelected: false),
             InputSeviceScreen(title: "Forum", icon: Icons.groups, isSelected: true),
@@ -49,7 +75,7 @@ class _SelectedSeviceScreenState extends State<SelectedSeviceScreen> {
             InputSeviceScreen(title: "Pregnancy Track", icon: Icons.pregnant_woman, isSelected: true),
             InputSeviceScreen(title: "News", icon: Icons.insert_drive_file_outlined, isSelected: false),
             InputSeviceScreen(title: "Pregnancy Track", icon: Icons.pregnant_woman, isSelected: true),
-           /*
+
             InputChip(
               labelPadding: EdgeInsets.all(kDefaultPadding * 0.2),
               avatar: Icon(
@@ -74,10 +100,10 @@ class _SelectedSeviceScreenState extends State<SelectedSeviceScreen> {
               selected: isSelected,
               selectedColor: kPrimaryColor,
             ),
-        */
+
           ],
 
-        ),
+        ),*/
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:besty/constants/constants.dart';
 import 'package:besty/models/news.dart';
 import 'package:besty/models/status.dart';
+import 'package:besty/screens/forum/components/Statut_view.dart';
 import 'package:besty/screens/forum/components/news_card.dart';
 import 'package:besty/screens/forum/components/status_card.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,6 @@ class ActusScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.4),
                   height: MediaQuery.of(context).size.height / 5,
                   color: const Color(0xFFEEEEEE),
-                  child: Expanded(
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       reverse: false,
@@ -33,16 +33,15 @@ class ActusScreen extends StatelessWidget {
                       //shrinkWrap: true,
                       itemCount: StatusData.length,
                       itemBuilder: (context, index) => StatusCard(
-                        status: StatusData[index], press: () {  },
-                        /*press: () => Navigator.push(
+                        status: StatusData[index],
+                          press: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const MessagesScreen(),
+                            builder: (context) => StatusView(status: StatusData[index],),
                           ),
-                        ),*/
+                        ),
                       ),
                     ),
-                  )
                 ),
               ),
               const Padding(
@@ -60,7 +59,8 @@ class ActusScreen extends StatelessWidget {
                   List.generate(
                     NewsData.length,
                         (index) => NewsCard(
-                      press: () {  }, news: NewsData[index],
+                      press: () {  },
+                      news: NewsData[index],
                     ),
                   ),
               )

@@ -1,7 +1,6 @@
 import 'package:besty/screens/home.dart';
 import 'package:besty/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 void main() {
   //SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((_) {
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightThemeData(context),
       darkTheme: darkThemeData(context),
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       home: const HomeScreen(),
     );
   }

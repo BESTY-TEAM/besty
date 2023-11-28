@@ -18,7 +18,7 @@ class StatusCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: kDefaultPadding * 0.25),
       child: InkWell(
-        //onTap: press,
+        onTap: press,
         //width: 200,
         child: Stack(
             children: [

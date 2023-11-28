@@ -27,11 +27,15 @@ class _FlowTrackScreenState extends State<FlowTrackScreen> {
   void initState() {
     controller.addListener(() {
       setState(() {
-
+        /*try {
+          controller.changeDay(DateTime.now().day);
+          print(_focusedDay.day);
+        } catch (e) {}*/
       });
     });
     super.initState();
-  }*/
+  }
+  */
 
   @override
   Widget build(BuildContext context) {

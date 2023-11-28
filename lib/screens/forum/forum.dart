@@ -2,7 +2,6 @@ import 'package:besty/constants/constants.dart';
 import 'package:besty/constants/assets.dart';
 import 'package:besty/screens/forum/components/chat_forum.dart';
 import 'package:besty/screens/forum/components/status.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'components/meet.dart';
 
@@ -17,31 +16,31 @@ class ForumScreen extends StatefulWidget {
 class _ChatsScreenState extends State<ForumScreen> with SingleTickerProviderStateMixin {
   late TabController tabController;//= TabController(length: 3, vsync: this, initialIndex: 0);
   int selectedValue = 0;
-  int currentIndex = 0;
+  //int currentIndex = 0;
   final RestorableInt tabIndex = RestorableInt(0);
 
-  @override
-  String get restorationId => 'tab_scrollable_demo';
+  //@override
+  //String get restorationId => 'tab_scrollable_demo';
 
   @override
   void restoreState(RestorationBucket? oldBucket, bool initialRestore) {
     //registerForRestoration(tabIndex, 'tab_index');
     tabController!.index = tabIndex.value;
   }
-
+/*
   @override
   void initState() {
     tabController = TabController(
       initialIndex: 0,
-      length: 12,
+      length: 3,
       vsync: this,
     );
     tabController!.addListener(() {
       // When the tab controller's value is updated, make sure to update the
       // tab index value, which is state restorable.
-      setState(() {
-        tabIndex.value = tabController!.index;
-      });
+      //setState(() {
+        //tabIndex.value = tabController!.index;
+      //});
     });
     super.initState();
   }
@@ -49,10 +48,11 @@ class _ChatsScreenState extends State<ForumScreen> with SingleTickerProviderStat
   @override
   void dispose() {
     tabController!.dispose();
+    tabController = TabController(length: 3, initialIndex: 0, vsync: this);
     tabIndex.dispose();
     super.dispose();
   }
-/*
+*/
   @override
   void initState() {
     super.initState();
@@ -64,7 +64,7 @@ class _ChatsScreenState extends State<ForumScreen> with SingleTickerProviderStat
   void dispose() {
     super.dispose();
     tabController.dispose();
-  }*/
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -74,9 +74,11 @@ class _ChatsScreenState extends State<ForumScreen> with SingleTickerProviderStat
         appBar: buildAppBar(),
         body:  TabBarView(
           physics: const NeverScrollableScrollPhysics(), controller: tabController,
-          dragStartBehavior: DragStartBehavior.start,
+          //dragStartBehavior: DragStartBehavior.start,
           children: const [
             ChatForumScreen(),
+            //ChatForumScreen(),
+            //ChatForumScreen(),
             ActusScreen(),
             MeetScreen(),
           ],
@@ -92,14 +94,15 @@ class _ChatsScreenState extends State<ForumScreen> with SingleTickerProviderStat
       backgroundColor: const Color(0xFFFFFFFF),
       flexibleSpace: Stack(
        children: [
-        Expanded(
-          child: Image.asset(
+        //Expanded(
+          //child:
+          Image.asset(
             Assets.womenBacground,
             width: MediaQuery.of(context).size.width,
             //height: 800,
             fit: BoxFit.cover,
             ),
-        ),
+        //),
         Positioned(
           top: 0,
           bottom: 0,
@@ -120,11 +123,52 @@ class _ChatsScreenState extends State<ForumScreen> with SingleTickerProviderStat
         )
        ],
       ),
-      automaticallyImplyLeading: false,
-      title: const Text(
-        "BESTY FORUM",
-        style: TextStyle(),
+      automaticallyImplyLeading: true,
+      title:  ListTile(
+        title:  Text(
+          "BESTY FORUM",
+          //textAlign: TextAlign.left,
+          style: Theme.of(context)
+            .textTheme
+            .headline5!
+            .copyWith(
+              color: kContentColorDarkTheme,
+              fontWeight: FontWeight.w500,
+            )
+          /*TextStyle(
+            fontWeight: FontWeight.w800,
+            color: kContentColorDarkTheme
+          ),*/
+        ),
+        subtitle: Padding(
+          padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.25),
+          child: Text(
+            "Share your Experience with other",
+            style: Theme.of(context)
+              .textTheme
+              .titleMedium!
+              .copyWith(
+              //fontFamily: 'nunito',
+              color: kContentColorDarkTheme,
+              //fontWeight: FontWeight.w500,
+              //height: 0.10,
+              letterSpacing: -0.24,
+            ),
+            /*TextStyle(
+                fontWeight: FontWeight.w500,
+                color: kContentColorDarkTheme
+            ),*/
+          ),
+        ),
+        //trailing: Text("860m - 28min"),
       ),
+      /*Text.rich(
+        textSpan : TextSpan(
+          text: "BESTY FORUM",
+
+        //style: TextStyle(),
+      ),
+    )*/
       bottom:  TabBar(
         isScrollable: true,
         indicatorColor: kContentColorDarkTheme,

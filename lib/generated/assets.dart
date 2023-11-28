@@ -10,13 +10,14 @@ class Assets {
   static const String assetsPinSource = 'assets/Pin_source.png';
   static const String assetsUser7 = 'assets/user_7.png';
   static const String iconsChat = 'assets/icons/chat.svg';
-  static const String iconsMenstruation_pain = 'assets/icons/Menstruation_pain.png';
   static const String iconsMenstruation = 'assets/icons/Menstruation.png';
+  static const String iconsMenstruationPain = 'assets/icons/Menstruation_pain.png';
   static const String iconsMood = 'assets/icons/Mood.png';
   static const String iconsNote = 'assets/icons/Note.png';
   static const String iconsSexProtection = 'assets/icons/Sex_protection.png';
   static const String imagesBaby = 'assets/images/baby.jpg';
   static const String imagesBesty = 'assets/images/besty.png';
+  static const String imagesDoctor = 'assets/images/doctor.png';
   static const String imagesFecondation = 'assets/images/fecondation.jpg';
   static const String imagesFood = 'assets/images/food.png';
   static const String imagesPregnatWomen = 'assets/images/pregnat_women.png';

@@ -18,7 +18,7 @@ class _SelectedSeviceScreenState extends State<InputSeviceScreen> {
     return InputChip(
       avatar: Icon(
         widget.icon,
-        //color: kContentColorDarkTheme,
+          color: widget.isSelected ? kContentColorDarkTheme : kSecondaryColor.withOpacity(0.5)
       ),
       label: Text(
         widget.title,
