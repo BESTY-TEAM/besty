@@ -162,7 +162,7 @@ class EduationCard extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding * 0.5, vertical: kDefaultPadding * 0.1),
                 child: Visibility(
                   visible: !isExpanded,
-                  child: ElevatedButton(
+                  child: FilledButton(
                     onPressed: (){
                       setState(() {
                         isExpanded = !isExpanded;

@@ -11,7 +11,7 @@ class HeaderSection extends StatelessWidget {
       return Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height * 0.204,//180,
-        margin: const EdgeInsets.fromLTRB(kDefaultPadding, kDefaultPadding, kDefaultPadding, kDefaultPadding * 0.7),
+        margin: const EdgeInsets.fromLTRB(kDefaultPadding / 2, kDefaultPadding, kDefaultPadding / 2 , kDefaultPadding * 0.7),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           gradient: const LinearGradient(
@@ -35,17 +35,17 @@ class HeaderSection extends StatelessWidget {
             ),
             Flexible(
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(kDefaultPadding * 0.75, kDefaultPadding * 0.5, kDefaultPadding * 0.5, kDefaultPadding * 0.5),
+                padding: const EdgeInsets.fromLTRB(kDefaultPadding * 0.75, kDefaultPadding * 0.5, kDefaultPadding * 0.5, kDefaultPadding * 0.2),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text(
                     "Contacter un spécialiste en santé et recevez des conseils gratuit",
-                    maxLines: 3,
+                     maxLines: 3,
                     style: Theme.of(context)
                     .textTheme
-                    .titleMedium
+                    .titleSmall
                     ?.copyWith(
                       color: kContentColorDarkTheme,
                       fontFamily: "Poppins"
@@ -57,13 +57,13 @@ class HeaderSection extends StatelessWidget {
                   maxLines: 2,
                   style: Theme.of(context)
                     .textTheme
-                    .titleMedium
+                    .titleSmall
                     ?.copyWith(
                       color: kContentColorDarkTheme.withOpacity(0.5),
                       fontFamily: "Poppins"
                     )
                   ),
-                  ElevatedButton(
+                  FilledButton(
                     onPressed: (){},       
                     child: const Text(
                       "Lire Plus"

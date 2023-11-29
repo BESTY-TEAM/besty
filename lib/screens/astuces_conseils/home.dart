@@ -27,7 +27,7 @@ class HomeEducation extends StatelessWidget {
               const HeaderSection(),
               // Personnal Advice
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -55,7 +55,7 @@ class HomeEducation extends StatelessWidget {
               const PersonalAdvice(),
               // Actuces & Conseil
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                padding: const EdgeInsets.symmetric(vertical: kDefaultPadding / 8, horizontal: kDefaultPadding / 2),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -83,7 +83,7 @@ class HomeEducation extends StatelessWidget {
               const AstucesAndAdvices(),
               // Education
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                padding: const EdgeInsets.symmetric(vertical: kDefaultPadding / 8, horizontal: kDefaultPadding / 2),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

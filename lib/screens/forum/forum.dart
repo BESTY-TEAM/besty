@@ -91,6 +91,7 @@ class _ChatsScreenState extends State<ForumScreen> with SingleTickerProviderStat
   AppBar buildAppBar() {
     return AppBar(
       toolbarHeight: 80,
+      automaticallyImplyLeading: true,
       backgroundColor: const Color(0xFFFFFFFF),
       flexibleSpace: Stack(
        children: [
@@ -123,7 +124,6 @@ class _ChatsScreenState extends State<ForumScreen> with SingleTickerProviderStat
         )
        ],
       ),
-      automaticallyImplyLeading: true,
       title:  ListTile(
         title:  Text(
           "BESTY FORUM",
@@ -169,11 +169,13 @@ class _ChatsScreenState extends State<ForumScreen> with SingleTickerProviderStat
         //style: TextStyle(),
       ),
     )*/
-      bottom:  TabBar(
+      bottom: TabBar(
         isScrollable: true,
+        labelColor: kContentColorDarkTheme,
         indicatorColor: kContentColorDarkTheme,
+        unselectedLabelColor: kContentColorDarkTheme,
         indicatorSize: TabBarIndicatorSize.tab,
-        padding: const EdgeInsets.only(left: kDefaultPadding, right: kDefaultPadding * 5),
+        padding: const EdgeInsets.only(/*left: kDefaultPadding,*/ right: kDefaultPadding * 10),
         onTap: (value) {
               setState(() {
                 selectedValue = value;

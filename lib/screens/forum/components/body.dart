@@ -1,4 +1,4 @@
-import 'package:besty/constants.dart';
+import 'package:besty/constants/constants.dart';
 import 'package:besty/models/Forum_group.dart';
 import 'package:besty/screens/forum/components/forum_card.dart';
 import 'package:flutter/material.dart';

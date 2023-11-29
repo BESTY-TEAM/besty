@@ -36,8 +36,8 @@ class MeetScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.2),
                 child: Container(
-                    padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.1),
-                  height: MediaQuery.of(context).size.height * 0.349,
+                  padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.1),
+                  height: MediaQuery.of(context).size.height * 0.359,
                    // color: const Color(0xFFEEEEEE),
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
@@ -75,10 +75,10 @@ class MeetScreen extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.1),
+                padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.2),
                 child: Container(
-                    padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.4),
-                    height: MediaQuery.of(context).size.height * 0.349,
+                  padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.1),
+                  height: MediaQuery.of(context).size.height * 0.359,
                     // color: const Color(0xFFEEEEEE),
                     child: ListView.builder(
                         scrollDirection: Axis.horizontal,
@@ -115,10 +115,10 @@ class MeetScreen extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.5),
+                padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.2),
                 child: Container(
-                    padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.4),
-                    height: MediaQuery.of(context).size.height * 0.349,
+                  padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.1),
+                  height: MediaQuery.of(context).size.height * 0.359,
                     // color: const Color(0xFFEEEEEE),
                     child: ListView.builder(
                         physics: const ScrollPhysics(),

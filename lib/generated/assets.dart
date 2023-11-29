@@ -4,14 +4,23 @@ class Assets {
 
   static const String assetsAvatar = 'assets/Avatar.png';
   static const String assetsBadge = 'assets/Badge.png';
+  static const String assetsBesty = 'assets/besty.png';
+  static const String assetsIconsBlood = 'assets/icons/blood.svg';
+  static const String assetsIconsLuckyPregnant = 'assets/icons/lucky_pregnant.svg';
+  static const String assetsIconsOvulation = 'assets/icons/ovulation.svg';
   static const String assetsLottiesAnimation = 'assets/lotties/animation.json';
   static const String assetsPinCurrentLocation = 'assets/Pin_current_location.png';
   static const String assetsPinDestination = 'assets/Pin_destination.png';
+  static const String assetsPinSource = 'assets/Pin_source.png';
+  static const String assetsUser7 = 'assets/user_7.png';
+  static const String iconsBlood = 'assets/icons/blood.png';
   static const String iconsChat = 'assets/icons/chat.svg';
+  static const String iconsLuckyPregnant = 'assets/icons/lucky_pregnant.png';
   static const String iconsMenstruation = 'assets/icons/Menstruation.png';
   static const String iconsMenstruationPain = 'assets/icons/Menstruation_pain.png';
   static const String iconsMood = 'assets/icons/Mood.png';
   static const String iconsNote = 'assets/icons/Note.png';
+  static const String iconsOvulation = 'assets/icons/ovulation.png';
   static const String iconsSexProtection = 'assets/icons/Sex_protection.png';
   static const String imagesBaby = 'assets/images/baby.jpg';
   static const String imagesBesty = 'assets/images/besty.png';

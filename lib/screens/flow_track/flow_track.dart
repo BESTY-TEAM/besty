@@ -1,3 +1,4 @@
+import 'package:besty/constants/constants.dart';
 import 'package:besty/screens/flow_track/components/circular_slider.dart';
 import 'package:besty/screens/flow_track/components/circular_slider_controller.dart';
 import 'package:besty/screens/flow_track/components/symptoms.dart';
@@ -44,7 +45,8 @@ class _FlowTrackScreenState extends State<FlowTrackScreen> {
         child: Padding(
         padding:const EdgeInsets.only(top: 50),
             child: Column(
-              children: <Widget>[
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
                 TableCalendar(
                   firstDay: DateTime.utc(2010, 10, 16),
                   lastDay: DateTime.utc(2030, 3, 14),
@@ -114,6 +116,7 @@ class _FlowTrackScreenState extends State<FlowTrackScreen> {
                     _selectedDay = focusedDay;
                   },
                 ),
+/*
                 TextFormField(
                   keyboardType: TextInputType.number,
                   validator: (value) {
@@ -135,11 +138,35 @@ class _FlowTrackScreenState extends State<FlowTrackScreen> {
                     } catch (e) {}
                   },
                 ),
+*/
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.75),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "3eme jour de ton cycle",
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline6
+                            //.labelLarge
+                      ),
+                      Text(
+                        "N'oublie pas d'ajouter les symptômes",
+                        style: Theme.of(context)
+                          .textTheme
+                          .titleMedium
+                          //.labelLarge
+                      ),
+                    ],
+                  ),
+                ),
                 CircularSlider(
                   controller: controller,
                 ),
-                //const SizedBox(height: 1000,),
-                //SymptomSection()
+                //const SizedBox(height: kDefaultPadding * 0.5,),
+                const SymptomSection(),
               ],
             ),
           ),
