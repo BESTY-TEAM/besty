@@ -3,9 +3,7 @@ import 'package:besty/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  //SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((_) {
-     runApp(const MyApp());
-  //});
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

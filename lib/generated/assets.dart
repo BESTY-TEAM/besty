@@ -4,6 +4,7 @@ class Assets {
 
   static const String assetsAvatar = 'assets/Avatar.png';
   static const String assetsBadge = 'assets/Badge.png';
+  static const String assetsBesty = 'assets/besty.png';
   static const String assetsLottiesAnimation = 'assets/lotties/animation.json';
   static const String assetsPinCurrentLocation = 'assets/Pin_current_location.png';
   static const String assetsPinDestination = 'assets/Pin_destination.png';
