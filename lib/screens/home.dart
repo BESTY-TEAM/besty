@@ -1,3 +1,4 @@
+import 'package:besty/common/pageview.dart';
 import 'package:besty/constants/constants.dart';
 import 'package:besty/screens/astuces_conseils/home.dart';
 import 'package:besty/screens/flow_track/flow_track.dart';
@@ -20,7 +21,8 @@ class _ChatsScreenState extends State<HomeScreen> {
   int currentIndex = 0;
 
   List pages = [
-      const HomeEducation(),
+      const PageViewDemo(),
+     // const HomeEducation(),
       const PregnantScreen(),
       const FlowTrackScreen(title: 'Flow Track',),
       const ForumScreen(),

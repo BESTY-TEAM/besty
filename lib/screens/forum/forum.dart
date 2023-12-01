@@ -14,56 +14,40 @@ class ForumScreen extends StatefulWidget {
 }
 //TickerProviderStateMixin, with SingleTickerProviderStateMixin, RestorationMixin
 class _ChatsScreenState extends State<ForumScreen> with SingleTickerProviderStateMixin {
-  late TabController tabController;//= TabController(length: 3, vsync: this, initialIndex: 0);
+  //late TabController tabController;// = TabController(length: 3, vsync: this, initialIndex: 0);
   int selectedValue = 0;
-  //int currentIndex = 0;
+
+  final PageController _pageController = PageController();
+  int selectedPage = 0;
   final RestorableInt tabIndex = RestorableInt(0);
 
-  //@override
-  //String get restorationId => 'tab_scrollable_demo';
+  late TabController _tabController;
 
   @override
-  void restoreState(RestorationBucket? oldBucket, bool initialRestore) {
-    //registerForRestoration(tabIndex, 'tab_index');
-    tabController!.index = tabIndex.value;
-  }
-/*
-  @override
   void initState() {
-    tabController = TabController(
-      initialIndex: 0,
-      length: 3,
-      vsync: this,
-    );
-    tabController!.addListener(() {
-      // When the tab controller's value is updated, make sure to update the
-      // tab index value, which is state restorable.
-      //setState(() {
-        //tabIndex.value = tabController!.index;
-      //});
+    super.initState();
+    _tabController = TabController(length: 3, vsync: this);
+
+    // Ajoutez un écouteur pour détecter les changements d'onglet et ajuster le PageView en conséquence
+    _tabController.addListener(() {
+      _pageController.animateToPage(
+        _tabController.index,
+        duration: Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
     });
-    super.initState();
+
+    // Ajoutez un écouteur pour détecter les changements de page et ajuster l'onglet en conséquence
+    _pageController.addListener(() {
+      _tabController.index = _pageController.page!.round();
+    });
   }
 
   @override
   void dispose() {
-    tabController!.dispose();
-    tabController = TabController(length: 3, initialIndex: 0, vsync: this);
-    tabIndex.dispose();
+    _tabController.dispose();
+    _pageController.dispose();
     super.dispose();
-  }
-*/
-  @override
-  void initState() {
-    super.initState();
-    tabController = TabController(length: 3, vsync: this, initialIndex: 0);//as PageController;
-    //tabController = TabController(length: 3, initialIndex: 0, vsync: this);
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    tabController.dispose();
   }
 
   @override
@@ -72,8 +56,20 @@ class _ChatsScreenState extends State<ForumScreen> with SingleTickerProviderStat
       length: 3,
       child: Scaffold(
         appBar: buildAppBar(),
-        body:  TabBarView(
-          physics: const NeverScrollableScrollPhysics(), controller: tabController,
+        body:  PageView(
+          //physics: const NeverScrollableScrollPhysics(),
+          controller: _pageController,
+          onPageChanged: (int index) {
+            setState(() {
+              selectedPage = index;
+            });
+            // Mettre à jour le TabController pour refléter la page actuelle
+            _tabController.animateTo(
+                index,
+                duration: Duration(microseconds: 10),
+                curve: Curves.easeIn
+            );
+          },
           //dragStartBehavior: DragStartBehavior.start,
           children: const [
             ChatForumScreen(),
@@ -162,25 +158,22 @@ class _ChatsScreenState extends State<ForumScreen> with SingleTickerProviderStat
         ),
         //trailing: Text("860m - 28min"),
       ),
-      /*Text.rich(
-        textSpan : TextSpan(
-          text: "BESTY FORUM",
-
-        //style: TextStyle(),
-      ),
-    )*/
       bottom: TabBar(
-        isScrollable: true,
+        //isScrollable: true,
+        controller: _tabController,
+        //physics: BouncingScrollPhysics(),
+        //tabAlignment: TabAlignment.fill,
         labelColor: kContentColorDarkTheme,
         indicatorColor: kContentColorDarkTheme,
         unselectedLabelColor: kContentColorDarkTheme,
         indicatorSize: TabBarIndicatorSize.tab,
-        padding: const EdgeInsets.only(/*left: kDefaultPadding,*/ right: kDefaultPadding * 10),
+        padding: const EdgeInsets.only(left: kDefaultPadding, right: kDefaultPadding * 5),
         onTap: (value) {
               setState(() {
-                selectedValue = value;
+                selectedPage = value;
               });
-              tabController.animateTo(value,);
+              _pageController.animateToPage(value,
+                  duration: Duration(microseconds: 10), curve: Curves.easeIn);
             },
         tabs: const [
           Tab(
