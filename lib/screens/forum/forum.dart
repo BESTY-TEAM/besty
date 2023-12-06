@@ -113,7 +113,9 @@ class _ChatsScreenState extends State<ForumScreen> with SingleTickerProviderStat
               begin:  Alignment(-0.49, 0.87),
               end:  Alignment(0.49, -0.87),
               colors: [
-                kSecondaryColor, Color(0x26FF6EAB)],
+                kSecondaryColor,
+                Color(0x26FF6EAB)
+              ],
             ),
             ),
           ),
@@ -137,7 +139,7 @@ class _ChatsScreenState extends State<ForumScreen> with SingleTickerProviderStat
           ),*/
         ),
         subtitle: Padding(
-          padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.25),
+          padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.0001),
           child: Text(
             "Share your Experience with other",
             style: Theme.of(context)

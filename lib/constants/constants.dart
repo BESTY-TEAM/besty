@@ -12,6 +12,7 @@ const kErrorColor = Color(0xFFF03738);
 //k = Color(0xFF366cf6);
 
 const kDefaultPadding = 20.0;
+const kBottomNavigationBarHeight = kDefaultPadding * 2.8;
 //const kPrimaryColor = Color(0xFF366CF6);
 //const kSecondaryColor = Color(0xFFF5F6FC);
 const kBgLightColor = Color(0xFFF2F4FC);
