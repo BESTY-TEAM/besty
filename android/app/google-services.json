@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "509208658163",
+    "project_id": "besty-1790e",
+    "storage_bucket": "besty-1790e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509208658163:android:8729ffcec6b07f60847786",
+        "android_client_info": {
+          "package_name": "com.example.besty"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUlap0oUjbzXSkxS3NHW1ndBlgbzYgd-8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
