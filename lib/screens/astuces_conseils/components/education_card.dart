@@ -142,7 +142,7 @@ class EduationCard extends StatelessWidget {
                   },
                   child: Text(
                     widget.conseil.message,
-                    maxLines: 80,
+                    maxLines: 1000,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context)
                         .textTheme

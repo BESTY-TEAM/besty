@@ -10,12 +10,20 @@ class PersonalAdvice extends StatelessWidget {
 
     @override
     Widget build(BuildContext context) {
-      return SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          children: List.generate(
-            ConseilsData.length, 
-            (index) => PersonalAdviceCard(conseil: ConseilsData[index], press: (){})),
+      return Container(
+        //margin: const EdgeInsets.symmetric(vertical: kDefaultPadding),
+        height: 180,
+        child: PageView.builder(
+          itemCount: ConseilsData.length,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (BuildContext context, int index) { 
+            return PersonalAdviceCard(conseil: ConseilsData[index], press: (){});
+           },
+          /*child: Row(
+            children: List.generate(
+              ConseilsData.length, 
+              (index) => ),
+          ),*/
         ),
       );
   }

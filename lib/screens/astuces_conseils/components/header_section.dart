@@ -10,7 +10,7 @@ class HeaderSection extends StatelessWidget {
     Widget build(BuildContext context) {
       return Container(
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height * 0.204,//180,
+        height: 170,//MediaQuery.of(context).size.height * 0.204,//180,
         margin: const EdgeInsets.fromLTRB(kDefaultPadding / 2, kDefaultPadding, kDefaultPadding / 2 , kDefaultPadding * 0.7),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),

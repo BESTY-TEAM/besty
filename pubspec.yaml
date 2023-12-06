@@ -3,61 +3,31 @@ description: A new Flutter project.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-
 version: 1.0.0+1
 
 environment:
   sdk: '>=3.1.0 <4.0.0'
 
-
-
 dependencies:
+  cupertino_icons: ^1.0.2
+  expandable: ^5.0.1
+  firebase_auth: ^4.15.0
+  firebase_core: ^2.24.0
   flutter:
     sdk: flutter
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-  table_calendar: ^3.0.9
+  flutter_svg: ^2.0.9
+  google_fonts: ^6.1.0
   intl: ^0.18.1
   lottie: ^2.7.0
-  google_fonts: ^6.1.0
-  expandable: ^5.0.1
-  #flutter_native_splash: ^2.3.6
-  #google_maps_flutter: ^2.5.0
-  #flutter_polyline_points: ^2.0.0
-  flutter_svg: ^2.0.9
-  firebase_core: ^2.24.0
-  #location: ^5.0.3
-
-
-# flutter_native_splash-development.yaml
-#flutter_native_splash:
- # color: "#ffffff"
-  # image: assets/besty.png
-  #  branding: assets/besty.png
-  # color_dark: "#121212"
-  #image_dark: assets/besty.png
-  #branding_dark: assets/besty.png
-
-    #android_12:
-    #image: assets/besty.png
-    #icon_background_color: "#ffffff"
-    #image_dark: assets/besty.png
-  #icon_background_color_dark: "#121212"
-
+  table_calendar: ^3.0.9
 
 dev_dependencies:
+
+  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
 
-
-  flutter_lints: ^2.0.0
-
-
 flutter:
-
 
   uses-material-design: true
 
@@ -66,7 +36,6 @@ flutter:
     - assets/icons/
     - assets/
     - assets/lotties/animation.json
-
   # fonts:
   #   - family: Schyler
   #     fonts:

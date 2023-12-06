@@ -21,7 +21,7 @@ class _ChatsScreenState extends State<HomeScreen> {
 
   List pages = [
       //const PageViewDemo(),
-      HomeEducation(),//controller: controller,),
+      const HomeEducation(),//controller: controller,),
       const PregnantScreen(),
       const FlowTrackScreen(title: 'Flow Track',),
       const ForumScreen(),

@@ -44,10 +44,6 @@ class _HomeEducationState extends State<HomeEducation> {
     @override
     Widget build(BuildContext context) {
       return Scaffold(
-        bottomSheet: Container(
-          color: kPrimaryColor,
-          child: const SizedBox(height: 100,),
-        ),
         body: RefreshIndicator(
           onRefresh: _refresh,
           child: SingleChildScrollView(
