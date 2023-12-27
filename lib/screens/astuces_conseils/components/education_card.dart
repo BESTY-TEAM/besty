@@ -1,9 +1,7 @@
+import 'package:besty/constants.dart';
 import 'package:besty/models/conseil.dart';
-import 'package:besty/models/news.dart';
-import 'package:besty/screens/forum/components/news_card.dart';
 import 'package:flutter/material.dart';
 import 'package:expandable/expandable.dart';
-import '../../../constants/constants.dart';
 
 
 class EduationCard extends StatefulWidget {
@@ -142,7 +140,7 @@ class EduationCard extends StatelessWidget {
                   },
                   child: Text(
                     widget.conseil.message,
-                    maxLines: 1000,
+                    maxLines: 80,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context)
                         .textTheme
@@ -168,8 +166,8 @@ class EduationCard extends StatelessWidget {
                         isExpanded = !isExpanded;
                       });
                     },       
-                    child: Text(
-                      isExpanded ? 'Voir moins' : 'Voir plus',
+                    child: const Text(
+                      'Voir plus',
                     ),          
                   ),
                 ),
@@ -192,7 +190,7 @@ class EduationCard extends StatelessWidget {
                       ),
                     ),
                   ),
-              )               
+              )              
             ],
           ),
         ),

@@ -1,9 +1,12 @@
 import 'package:besty/common/ScrollToHide.dart';
+import 'package:besty/common/pageview.dart';
 import 'package:besty/constants/constants.dart';
 import 'package:besty/screens/astuces_conseils/home.dart';
 import 'package:besty/screens/flow_track/flow_track.dart';
 import 'package:besty/screens/forum/forum.dart';
 import 'package:besty/screens/pregnancy_track/pregant.dart';
+import 'package:besty/screens/profile/profile.dart';
+import 'package:besty/screens/services/selected_services.dart';
 import 'package:flutter/material.dart';
 
 
@@ -50,8 +53,8 @@ class _ChatsScreenState extends State<HomeScreen> {
         );
     }
 
-  SrollToHideWidget buildBottomNavigationBar() {
-      return SrollToHideWidget(
+  ScrollToHideWidget buildBottomNavigationBar() {
+      return ScrollToHideWidget(
         controller: controller,
         child: BottomNavigationBar(
           elevation: 1,

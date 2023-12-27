@@ -150,24 +150,6 @@ class NewsCard extends StatelessWidget {
                         ]
                       ),
                     ),
-                  
-                  /*
-                    Container(
-                      padding: const EdgeInsets.all(kDefaultPadding * 0.05),
-                      height: MediaQuery.of(context).size.height / 5,
-                      //width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        color: kContentColorDarkTheme,
-                        borderRadius: BorderRadius.circular(kDefaultPadding * 0.5),
-                        image: DecorationImage(
-                          image: AssetImage(
-                            news.image,
-                          ),
-                          fit: BoxFit.cover
-                        )
-                      ),
-                    ),
-                  */
                   ]
                 ),
               

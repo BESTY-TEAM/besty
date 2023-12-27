@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class SrollToHideWidget extends StatefulWidget{
-  const SrollToHideWidget({
+class ScrollToHideWidget extends StatefulWidget{
+  const ScrollToHideWidget({
     Key? key,
     required this.child,
     required this.controller,
@@ -16,11 +16,18 @@ class SrollToHideWidget extends StatefulWidget{
   final double height;
 
   @override
-  State<SrollToHideWidget> createState() => _SrollToHideWidgetState();
+  State<ScrollToHideWidget> createState() => _ScrollToHideWidgetState();
 }
 
-class _SrollToHideWidgetState extends State<SrollToHideWidget> {
+class _ScrollToHideWidgetState extends State<ScrollToHideWidget> {
   bool isVisible = true;
+
+
+  @override
+  void initState() {
+    super.initState();
+    widget.controller.addListener(listen);
+  }
 
   @override
   void dispose(){

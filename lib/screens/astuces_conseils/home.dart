@@ -1,4 +1,3 @@
-import 'package:besty/common/ScrollToHide.dart';
 import 'package:besty/constants/constants.dart';
 import 'package:besty/screens/astuces_conseils/components/astuce_and_advice.dart';
 import 'package:besty/screens/astuces_conseils/components/conseil.dart';
@@ -11,10 +10,10 @@ import 'package:flutter/material.dart';
 class HomeEducation extends StatefulWidget {
   const HomeEducation({
     Key? key,
-    //this.controller = ScrollController(),
+    //required this.homeController,
   }) : super(key: key);
 
-  //final ScrollController controller;
+  //final ScrollController homeController;
 
 
   @override
@@ -47,7 +46,7 @@ class _HomeEducationState extends State<HomeEducation> {
         body: RefreshIndicator(
           onRefresh: _refresh,
           child: SingleChildScrollView(
-            //controller: SrollToHideWidget.controller,
+            controller: controller,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

@@ -137,27 +137,9 @@ class MessagesScreen extends StatelessWidget {
                           .copyWith(
                         color: kContentColorDarkTheme,
                         fontWeight: FontWeight.w500,
+                        fontSize: 20
                       )
                     ),
-                  /*
-                    subtitle: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 0.25),
-                    child: Text(
-                      "",
-                      //"Share your Experience with other",
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleMedium!
-                          .copyWith(
-                        //fontFamily: 'nunito',
-                        color: kContentColorDarkTheme,
-                        //fontWeight: FontWeight.w500,
-                        //height: 0.10,
-                        letterSpacing: -0.24,
-                      ),
-                    ),
-                  ),
-                  */
                 ),
               ),
               IconButton(
