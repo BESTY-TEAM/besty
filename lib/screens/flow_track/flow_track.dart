@@ -1,3 +1,4 @@
+import 'package:besty/common/circular_slider_2.dart';
 import 'package:besty/constants/constants.dart';
 import 'package:besty/screens/flow_track/components/circular_slider.dart';
 import 'package:besty/screens/flow_track/components/circular_slider_controller.dart';
@@ -79,6 +80,9 @@ class _FlowTrackScreenState extends State<FlowTrackScreen> {
                   // To see
                   selectedDayPredicate: (day) {
                     return isSameDay(_selectedDay, day);
+                  },
+                  onHeaderTapped: (hi){
+                    print(hi);
                   },
                   onDaySelected: (selectedDay, focusedDay) {
                     if (!isSameDay(_selectedDay, selectedDay)) {
@@ -162,6 +166,7 @@ class _FlowTrackScreenState extends State<FlowTrackScreen> {
                     ],
                   ),
                 ),
+                //CircularSlider2(),
                 CircularSlider(
                   controller: controller,
                 ),

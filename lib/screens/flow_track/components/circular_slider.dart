@@ -18,10 +18,11 @@ class CircularSlider extends StatefulWidget {
 }
 
 class _CircularSliderState extends State<CircularSlider> {
+  int duringCycle = 30;
   Offset currentDragOffset = Offset.zero;
-  double startAngle = degToRad(90);
-  double totalAngle = degToRad(360);
-  int duringCycle = 28;
+  double startAngle = degToRad(90); // 90
+  double totalAngle = degToRad(230); //360
+
 
   @override
   void initState() {
@@ -36,6 +37,10 @@ class _CircularSliderState extends State<CircularSlider> {
     Size screenSize = MediaQuery.of(context).size;
     Size canvasSize = Size(screenSize.width, screenSize.width /*- 10*/);
     Offset center = canvasSize.center(Offset.zero);
+
+    //****************************************************//
+    // * Indicateur du jour du mois sur le CircleSlider *//
+    //**************************************************//
     final List dots = List.generate(
       duringCycle,
       (index) => generateSmallSlideDot(
@@ -46,17 +51,23 @@ class _CircularSliderState extends State<CircularSlider> {
         dotSize: 5,
       ),
     );
+
+    //************************//
+    // * Generate decorator *//
+    //**********************//
     final List innerDots = List.generate(
       duringCycle,
       (i) {
         var index = i;
+
+        // Blood Decorator Icon
         if (0 <= index && index < 6) {
           return generateSmallSlideDot(
             dotNumber: index,
             center: center,
             startAngle: startAngle,
             dotSize: 15,
-            dotColor: Color.fromARGB(0, 255, 143, 143),
+            dotColor: const Color.fromARGB(0, 255, 143, 143),
             icon: const Icon(
               Icons.water_drop_outlined,
               color: Color.fromARGB(255, 255, 76, 76),
@@ -65,6 +76,8 @@ class _CircularSliderState extends State<CircularSlider> {
             raduisSubstract: 25,
           );
         }
+
+        // Circle Decorator Icon
         if ((6 <= index && index < 11)) {
           return generateSmallSlideDot(
             dotNumber: index,
@@ -80,6 +93,8 @@ class _CircularSliderState extends State<CircularSlider> {
             raduisSubstract: 25,
           );
         }
+
+        // Circle Decorator Icon
         if ((17 <= index && index < 22)) {
           return generateSmallSlideDot(
             dotNumber: index,
@@ -95,6 +110,8 @@ class _CircularSliderState extends State<CircularSlider> {
             raduisSubstract: 25,
           );
         }
+
+        // Double Circle Decorator Icon
         if (11 <= index && index < 17) {
           return generateSmallSlideDot(
             dotNumber: index,
@@ -110,13 +127,15 @@ class _CircularSliderState extends State<CircularSlider> {
             raduisSubstract: 25,
           );
         }
+
+        // Losange Decorator Icon
         if (17 <= index && index < duringCycle) {
           return generateSmallSlideDot(
             dotNumber: index,
             center: center,
             startAngle: startAngle,
             dotSize: 15,
-            dotColor: Color.fromARGB(0, 255, 143, 143),
+            dotColor: const Color.fromARGB(0, 255, 143, 143),
             icon: Transform.rotate(
               angle: 45 * math.pi / 180,
               child: const Icon(
@@ -132,6 +151,7 @@ class _CircularSliderState extends State<CircularSlider> {
       },
     );
 
+    // Sub green Circle Decorator
     final List innerDotsLevel2 = List.generate(
       duringCycle,
       (i) {
@@ -146,11 +166,11 @@ class _CircularSliderState extends State<CircularSlider> {
             center: center,
             startAngle: startAngle,
             dotSize: 5,
-            dotColor: Color.fromARGB(255, 213, 241, 226),
+            dotColor: const Color.fromARGB(255, 213, 241, 226),
             raduisSubstract: 36,
           );
         }
-        return SizedBox();
+        return const SizedBox();
       },
     );
 
@@ -171,7 +191,7 @@ class _CircularSliderState extends State<CircularSlider> {
         ...dots,
         ...innerDots,
         ...innerDotsLevel2,
-        Container(
+        SizedBox( //Container
           height: canvasSize.height,
           child: Center(
             child: LottieBuilder.asset(
