@@ -3,18 +3,40 @@ import 'package:besty/models/symptom.dart';
 import 'package:besty/generated/assets.dart';
 
 class Period {
-  final int firstDay;
-  final int endDay;
+  final DateTime firstDay;
+  final DateTime endDay;
+  final int dure;
   final List<Symtom> symptom;
   final String note;
   final String title;
   Period({
     required this.symptom,
     required this.firstDay,
+    required this.dure,
     required this.endDay,
     required this.note,
     required this.title,
   });
+  // Fonction pour calculer la date d'ovulation
+  DateTime calculateOvulationDate() {
+    if (dure >= 21 && dure <= 35) {
+      // Vérifier que la durée du cycle menstruel est valide
+      // La date d'ovulation est 14 jours avant la fin de la période
+      return endDay.subtract(Duration(days: 14));
+    } else {
+      throw Exception('La durée du cycle menstruel doit être entre 21 et 35 jours.');
+    }
+  }
+
+  DateTime calculateNextPeriodStartDate() {
+    if (dure >= 21 && dure <= 35) {
+      // Vérifier que la durée du cycle menstruel est valide
+      // Le début des prochaines règles est la fin de la période actuelle + 1 jour
+      return endDay.add(Duration(days: 1));
+    } else {
+      throw Exception('La durée du cycle menstruel doit être entre 21 et 35 jours.');
+    }
+  }
 }
 
 List PeriodData = [
